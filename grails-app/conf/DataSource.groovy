@@ -25,8 +25,11 @@ environments {
     }
     production {
         dataSource {
+            driverClassName = "com.mysql.jdbc.Driver"
+            username = "currentcost"
+            password = "cc00pr0d"
             dbCreate = "update"
-            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+            url = "jdbc:mysql://localhost/currentcost_production"
         }
     }
 }

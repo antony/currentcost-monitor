@@ -1,0 +1,5 @@
+You need to install the rxtx kernel module for any of the serial communication to work.
+
+on Ubuntu/Debian & Derivatives:
+
+apt-get install librxtx-java
