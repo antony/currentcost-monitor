@@ -1,0 +1,12 @@
+<msg>
+	<src>CC128-v0.11</src>
+	<dsb>00223</dsb>
+	<time>17:26:45</time>
+	<tmpr>14.8</tmpr>
+	<sensor>0</sensor>
+	<id>00077</id>
+	<type>1</type>
+	<ch1>
+		<watts>00490</watts>
+	</ch1>
+</msg>
