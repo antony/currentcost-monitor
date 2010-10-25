@@ -1,10 +1,10 @@
 package currentcost.monitor
 
 import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
-import groovy.util.slurpersupport.GPathResult
+
 import currentcost.monitor.exception.CurrentCostResponseException
-import java.sql.Timestamp
 import currentcost.monitor.exception.UnsupportedResponseException
+import groovy.util.slurpersupport.GPathResult
 
 class MonitoringService {
 
@@ -25,7 +25,7 @@ class MonitoringService {
 
         String readingTime = new Date().format("dd/MM/yyyy ${message.time.toString()}")
 
-        Long timestamp = Calendar.instance.time.parse('dd/MM/yyyy hh:mm:ss', readingTime).time
+        Long timestamp = Calendar.instance.time.parse('dd/MM/yyyy HH:mm:ss', readingTime).time
 
         CH.config.currentcost.channels.each { channel ->
           Reading reading = new Reading(timestamp:timestamp,
