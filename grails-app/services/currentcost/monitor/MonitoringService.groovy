@@ -12,6 +12,8 @@ class MonitoringService {
 
     static transactional = true
 
+    static String DEFAULT_DATE_FORMAT = "dd/MM/yyyy HH:mm:ss"
+
     def takeReading() {
 
       try {
@@ -25,7 +27,7 @@ class MonitoringService {
 
         String readingTime = new Date().format("dd/MM/yyyy ${message.time.toString()}")
 
-        Long timestamp = Calendar.instance.time.parse('dd/MM/yyyy HH:mm:ss', readingTime).time
+        Long timestamp = Calendar.instance.time.parse(DEFAULT_DATE_FORMAT, readingTime).time
 
         CH.config.currentcost.channels.each { channel ->
           Reading reading = new Reading(timestamp:timestamp,
@@ -46,7 +48,8 @@ class MonitoringService {
 
     List<Reading> fetchConsumption(long from, long to) {
 
-      Reading.findAll().each { println new Date(it.timestamp).format("dd/MM/yyyy HH:mm:ss") }
+      Reading.findAll().each {
+          println new Date(it.timestamp).format(DEFAULT_DATE_FORMAT) }
 
       def criteria = Reading.createCriteria() 
       return criteria {
