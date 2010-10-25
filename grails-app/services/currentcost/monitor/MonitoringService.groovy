@@ -46,10 +46,7 @@ class MonitoringService {
 
     List<Reading> fetchConsumption(long from, long to) {
 
-      println "from ${new Date(from).format("dd/MM/yyyy hh:mm:ss")} to ${new Date(to).format("dd/MM/yyyy hh:mm:ss")}"
-
-
-      Reading.findAll().each { println new Date(it.timestamp).format("dd/MM/yyyy hh:mm:ss") }
+      Reading.findAll().each { println new Date(it.timestamp).format("dd/MM/yyyy HH:mm:ss") }
 
       def criteria = Reading.createCriteria() 
       return criteria {
