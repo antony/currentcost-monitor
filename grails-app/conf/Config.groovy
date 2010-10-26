@@ -89,5 +89,5 @@ log4j = {
 
     warn   'org.mortbay.log'
 
-    info   'currentcost.monitor'
+    error   'org.enzy'
 }

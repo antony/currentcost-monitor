@@ -1,4 +1,4 @@
-import currentcost.monitor.CurrentCostReader
+import uk.co.desirableobjects.domotics.currentcost.CurrentCostReader
 
 class BootStrap {
 

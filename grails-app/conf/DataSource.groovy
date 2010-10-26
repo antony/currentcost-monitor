@@ -26,7 +26,7 @@ environments {
     production {
         dataSource {
             driverClassName = "com.mysql.jdbc.Driver"
-            username = "currentcost"
+            username = "org"
             password = "cc00pr0d"
             dbCreate = "update"
             url = "jdbc:mysql://localhost/currentcost_production"

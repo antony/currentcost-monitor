@@ -1,6 +1,5 @@
-import currentcost.monitor.FetchReadingJob
-import currentcost.monitor.CurrentCostReader
-import currentcost.monitor.MonitoringService
+import uk.co.desirableobjects.domotics.currentcost.CurrentCostReader
+import uk.co.desirableobjects.domotics.currentcost.MonitoringService
 
 beans = {
   currentCostReader(CurrentCostReader)

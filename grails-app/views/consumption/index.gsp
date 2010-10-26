@@ -44,7 +44,7 @@
         padding: 0;
         background: #000 url(${resource(dir:'images', file:'background.jpg')}) repeat top left;
       }
-      h1 {
+      h1, span.important {
         font-family: "Delicious Bold", sans-serif;
       }
       h1, h2, h3 {
@@ -61,20 +61,30 @@
       }
       div#inner {
         text-align: left;
+        padding: 0 0 2em 0;
+      }
+      div#footer {
+        text-align: right;
+        padding: 2em 0;
+      }
+      div.content {
         border: 1px solid #fff;
         background: transparent url(${resource(dir:'images', file:'semi.png')}) repeat top left;
         width: 760px;
         margin: 2em auto;
-        padding: 0 0 2em 0;
       }
       div.chart {
         margin: 0 auto;
+      }
+      img#grails-logo {
+        margin-right: 2em;
+        vertical-align: middle;
       }
     </style>
   </head>
   <body>
     <div id="outer">
-      <div id="inner">
+      <div id="inner" class="content">
         <div class="section">
           <h1>Home Automation</h1>
           <h2>Energy Usage Monitoring</h2>
@@ -90,6 +100,12 @@
           <h2>Temperature Monitoring</h2>
         </div>
         <div id='temperature_chart' class="chart" style='width: 700px; height: 240px;'></div>
+      </div>
+      <div id="footer" class="content">
+        Designed and developed by <span class="important">DesirableObjects</span>. Powered by &nbsp;
+        <g:link url="http://grails.org">
+          <img id="grails-logo" src="${resource(dir:'images', file:'grails_logo.png')}" alt="Grails" />
+        </g:link>
       </div>
     </div>
   </body>
