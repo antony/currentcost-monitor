@@ -17,21 +17,21 @@
 
       function drawCharts() {
 
-        var wattageData = new google.visualization.DataTable();
-        wattageData.addColumn('datetime', 'Date');
-        wattageData.addColumn('number', 'Watts');
-        wattageData.addRows();
+        var wattage = new google.visualization.DataTable();
+        wattage.addColumn('datetime', 'Date');
+        wattage.addColumn('number', 'Watts');
+        wattage.addRows(wattageData);
 
-        var temperatureData = new google.visualization.DataTable();
-        temperatureData.addColumn('datetime', 'Date');
-        temperatureData.addColumn('number', 'Temperature (C)');
-        temperatureData.addRows();
+        var temperature = new google.visualization.DataTable();
+        temperature.addColumn('datetime', 'Date');
+        temperature.addColumn('number', 'Temperature (C)');
+        temperature.addRows(temperatureData);
 
         var wattageChart = new google.visualization.AnnotatedTimeLine(document.getElementById('wattage_chart'));
-        wattageChart.draw(wattageData, {displayAnnotations: true});
+        wattageChart.draw(wattage, {displayAnnotations: true});
 
         var wattageChart = new google.visualization.AnnotatedTimeLine(document.getElementById('temperature_chart'));
-        wattageChart.draw(temperatureData, {displayAnnotations: true});
+        wattageChart.draw(temperature, {displayAnnotations: true});
       }
     </script>
     <style type="text/css">
@@ -50,7 +50,7 @@
       h1, h2, h3 {
         margin: 0.2em 0;
       }
-      div#section {
+      div.section {
         margin: 1em 0 1em 2em;
       }
       div#outer {
@@ -75,7 +75,7 @@
   <body>
     <div id="outer">
       <div id="inner">
-        <div id="section">
+        <div class="section">
           <h1>Home Automation</h1>
           <h2>Energy Usage Monitoring</h2>
           <h2>For ${window} <g:each in="${windows}" var="windowName">
@@ -86,8 +86,10 @@
           </h2>
         </div>
         <div id='wattage_chart' class="chart" style='width: 700px; height: 240px;'></div>
-        <h2>Temperature Monitoring</h2>
-        <div id='temperature_chart' class="chart" style='width: 700px; height: 240px;'></div>
+        <div class="section">
+          <h2>Temperature Monitoring</h2>
+          <div id='temperature_chart' class="chart" style='width: 700px; height: 240px;'></div>
+        </div>
       </div>
     </div>
   </body>
