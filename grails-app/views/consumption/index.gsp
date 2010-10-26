@@ -4,22 +4,34 @@
     <title>CurrentCost Readings</title>
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
     <script type='text/javascript'>
-      google.load('visualization', '1', {'packages':['annotatedtimeline']});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('datetime', 'Date');
-        data.addColumn('number', 'Watts');
-        data.addColumn('number', 'temperature');
-        data.addRows([
-          <g:each in="${readings}" var="reading">
-                [new Date(${reading.timestamp}), ${reading.watts}, ${reading.temperature}],
-          </g:each>
-          null
-        ]);
 
-        var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
-        chart.draw(data, {displayAnnotations: true});
+      var wattageData = []
+      var temperatureData = []
+      <g:each in="${readings}" var="reading">
+            wattageData.push(new Date(${reading.timestamp}, ${reading.watts}));
+            temperatureData.push(new Date(${reading.timestamp}, ${reading.temperature}));
+      </g:each>
+
+      google.load('visualization', '1', {'packages':['annotatedtimeline']});
+      google.setOnLoadCallback(drawCharts);
+
+      function drawCharts() {
+
+        var wattageData = new google.visualization.DataTable();
+        wattageData.addColumn('datetime', 'Date');
+        wattageData.addColumn('number', 'Watts');
+        wattageData.addRows();
+
+        var temperatureData = new google.visualization.DataTable();
+        temperatureData.addColumn('datetime', 'Date');
+        temperatureData.addColumn('number', 'Temperature (C)');
+        temperatureData.addRows();
+
+        var wattageChart = new google.visualization.AnnotatedTimeLine(document.getElementById('wattage_chart'));
+        wattageChart.draw(wattageData, {displayAnnotations: true});
+
+        var wattageChart = new google.visualization.AnnotatedTimeLine(document.getElementById('temperature_chart'));
+        wattageChart.draw(temperatureData, {displayAnnotations: true});
       }
     </script>
     <style type="text/css">
@@ -55,7 +67,7 @@
         margin: 2em auto;
         padding: 0 0 2em 0;
       }
-      div#chart_div {
+      div.chart {
         margin: 0 auto;
       }
     </style>
@@ -73,7 +85,9 @@
             </g:each>
           </h2>
         </div>
-        <div id='chart_div' style='width: 700px; height: 240px;'></div>  
+        <div id='wattage_chart' class="chart" style='width: 700px; height: 240px;'></div>
+        <h2>Temperature Monitoring</h2>
+        <div id='temperature_chart' class="chart" style='width: 700px; height: 240px;'></div>
       </div>
     </div>
   </body>

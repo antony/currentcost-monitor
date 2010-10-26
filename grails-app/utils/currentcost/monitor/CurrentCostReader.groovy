@@ -35,7 +35,7 @@ class CurrentCostReader {
         
         while (!xml.endsWith("</msg>")) {
             try {
-              xml = bufferedReader.readLine()
+              xml += bufferedReader.readLine()
             } catch (IOException ioe) {
               xml = ""
               log.error "Unable to fetch stream."
