@@ -5,11 +5,11 @@
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
     <script type='text/javascript'>
 
-      var wattageData = []
-      var temperatureData = []
+      var wattageData = [];
+      var temperatureData = [];
       <g:each in="${readings}" var="reading">
-            wattageData.push(new Date(${reading.timestamp}, ${reading.watts}));
-            temperatureData.push(new Date(${reading.timestamp}, ${reading.temperature}));
+            wattageData.push([new Date(${reading.timestamp}), ${reading.watts}]);
+            temperatureData.push([new Date(${reading.timestamp}), ${reading.temperature}]);
       </g:each>
 
       google.load('visualization', '1', {'packages':['annotatedtimeline']});
@@ -30,8 +30,8 @@
         var wattageChart = new google.visualization.AnnotatedTimeLine(document.getElementById('wattage_chart'));
         wattageChart.draw(wattage, {displayAnnotations: true});
 
-        var wattageChart = new google.visualization.AnnotatedTimeLine(document.getElementById('temperature_chart'));
-        wattageChart.draw(temperature, {displayAnnotations: true});
+        var temperatureChart = new google.visualization.AnnotatedTimeLine(document.getElementById('temperature_chart'));
+        temperatureChart.draw(temperature, {displayAnnotations: true});
       }
     </script>
     <style type="text/css">
@@ -88,8 +88,8 @@
         <div id='wattage_chart' class="chart" style='width: 700px; height: 240px;'></div>
         <div class="section">
           <h2>Temperature Monitoring</h2>
-          <div id='temperature_chart' class="chart" style='width: 700px; height: 240px;'></div>
         </div>
+        <div id='temperature_chart' class="chart" style='width: 700px; height: 240px;'></div>
       </div>
     </div>
   </body>
