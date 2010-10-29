@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
   <head>
-    <title>CurrentCost Readings</title>
+    <title>Domotics: Energy and Temperature</title>
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
     <script type='text/javascript'>
 
@@ -38,49 +38,13 @@
       @font-face { font-family: Delicious; src: url(${resource(dir:'fonts', file:'Delicious-Roman.otf')}); }
       @font-face { font-family: "Delicious Bold"; src: url(${resource(dir:'fonts', file:'Delicious-Bold.otf')}); }
       body {
-        font-family: "Delicious", sans-serif;
-        color: #fff;
-        margin: 0;
-        padding: 0;
         background: #000 url(${resource(dir:'images', file:'background.jpg')}) repeat top left;
       }
-      h1, span.important {
-        font-family: "Delicious Bold", sans-serif;
-      }
-      h1, h2, h3 {
-        margin: 0.2em 0;
-      }
-      div.section {
-        margin: 1em 0 1em 2em;
-      }
-      div#outer {
-        text-align: center;
-      }
-      a {
-        color: #86ff1d;
-      }
-      div#inner {
-        text-align: left;
-        padding: 0 0 2em 0;
-      }
-      div#footer {
-        text-align: right;
-        padding: 2em 0;
-      }
       div.content {
-        border: 1px solid #fff;
         background: transparent url(${resource(dir:'images', file:'semi.png')}) repeat top left;
-        width: 760px;
-        margin: 2em auto;
-      }
-      div.chart {
-        margin: 0 auto;
-      }
-      img#grails-logo {
-        margin-right: 2em;
-        vertical-align: middle;
       }
     </style>
+    <link rel="stylesheet" type="text/css" href="${resource(dir:'css', file:'main.css')}" />
   </head>
   <body>
     <div id="outer">
