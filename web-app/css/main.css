@@ -1,6 +1,6 @@
 body {
     font-family: "Delicious", sans-serif;
-    color: #fff;
+    color: #000;
     margin: 0;
     padding: 0;
 }
@@ -9,47 +9,35 @@ img {
     border: 0;
 }
 
-h1, span.important {
+h1, h2, span.important {
     font-family: "Delicious Bold", sans-serif;
 }
-
+h3 {
+    font-size: 1em;
+}
 h1, h2, h3 {
     margin: 0.2em 0;
 }
-
-div.section {
-    margin: 1em 0 1em 2em;
-}
-
-div#outer {
-    text-align: center;
-}
-
-a {
-    color: #86ff1d;
-}
-
-div#inner {
-    text-align: left;
-    padding: 0 0 2em 0;
-}
-
-div#footer {
-    text-align: right;
-    padding: 2em 0;
-}
-
-div.content {
-    border: 1px solid #fff;
-    width: 760px;
-    margin: 2em auto;
-}
-
 div.chart {
-    margin: 0 auto;
+    width: 100%;
 }
-
-img#grails-logo {
-    margin-right: 2em;
-    vertical-align: middle;
+div.module {
+    margin-top: 4em;
+    clear: both;
+    overflow: hidden;
+}
+div.content {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+div.description {
+    position: relative;
+    text-align: right;
+    float: left;
+    width: 25%;
+    margin-right: 4em;
+}
+div#footer {
+    text-align: center;
 }
