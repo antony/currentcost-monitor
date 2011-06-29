@@ -21,7 +21,8 @@
              xAxis: {
                 title: {
                    text: 'Wattage'
-                }
+                },
+                type: 'datetime'
              },
              yAxis: {
                 title: {
@@ -32,7 +33,7 @@
                 name: 'Watts',
                 data: [
                   <g:each in="${readings}" var="reading">
-                    [new Date(${reading.timestamp}), ${reading.watts}],
+                    [${reading.timestamp}, ${reading.watts}],
                   </g:each>
                 ]
              }]
@@ -49,7 +50,8 @@
                xAxis: {
                   title: {
                      text: 'Temperature'
-                  }
+                  },
+                  type: 'datetime'
                },
                yAxis: {
                   title: {
@@ -60,7 +62,7 @@
                   name: 'Celsius',
                   data: [
                     <g:each in="${readings}" var="reading">
-                      [new Date(${reading.timestamp}), ${reading.temperature}],
+                      [${reading.timestamp}, ${reading.temperature}],
                     </g:each>
                   ]
                }]
