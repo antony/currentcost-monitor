@@ -26,11 +26,11 @@
              },
              yAxis: {
                 title: {
-                   text: 'Time / Date'
+                   text: 'Watts'
                 }
              },
              series: [{
-                name: 'Watts',
+                name: 'Time / Date',
                 data: [
                   <g:each in="${readings}" var="reading">
                     [${reading.timestamp}, ${reading.watts}],
@@ -55,11 +55,11 @@
                },
                yAxis: {
                   title: {
-                     text: 'Time / Date'
+                     text: 'Celsius'
                   }
                },
                series: [{
-                  name: 'Celsius',
+                  name: 'Time / Date',
                   data: [
                     <g:each in="${readings}" var="reading">
                       [${reading.timestamp}, ${reading.temperature}],
@@ -95,7 +95,7 @@
   <div class="module">
     <div class="description">
       <h2>Temperature</h2>
-      <h3>Historical outside building temperature</h3>
+      <h3>Historical building lobby temperature</h3>
     </div>
     <div class="content">
       <div id="temperature-chart" class="chart"></div>
