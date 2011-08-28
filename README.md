@@ -14,5 +14,4 @@ This is my backlog:
 
  * Clear up logging, it's really verbose right now, and it shouldn't be.
  * Use serial port events, instead of polling. See http://embeddedfreak.wordpress.com/2008/08/12/serial-port-event-in-rxtx/
- * Remove flash graphs. I don't like flash. I don't need flash.
  * Implement 'history' messages. Not sure what I want to do with them yet, but you get a lot.
